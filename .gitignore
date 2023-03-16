@@ -1,0 +1,15 @@
+.npm/*
+.nvm/*
+.gitconfig
+.aws/*
+.azure/*
+.bash_history
+.bash_logout
+.cache/*
+.local
+.poshthemes/*
+.ssh/*
+vs_code_repos/*
+nltk_data/*
+.local/*
+.config/nvim/.netrwhist
