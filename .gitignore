@@ -13,3 +13,4 @@ vs_code_repos/*
 nltk_data/*
 .local/*
 .config/nvim/.netrwhist
+.config/nvim/plugin/packer_compiled.lua
