@@ -135,7 +135,7 @@ man() {
 }
 
 # Custom aliases
-alias lss="ls -al --color=auto --sort=extension --group-directories-first"
+alias lss="ls -Al --color=auto --sort=extension --group-directories-first"
 alias grep="grep --color=always"
 alias gg="grep -nriI --color=always" # recursive, no binary files, include line numbers, ignore case
 alias ggf="grep -nriIl --color=always" # grep but only show match filenames
