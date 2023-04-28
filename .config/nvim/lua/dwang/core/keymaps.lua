@@ -50,3 +50,15 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- horizontal split
 keymap.set("n", "<leader>se", "<C-w>=") -- make splits equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize/minimize window
+
+-- Tab management keybinds
+keymap.set("n", "<leader>to", ":tabnew<CR>") -- Open new tab
+keymap.set("n", "<leader>tx", ":tabclose<CR>") -- Close current tab
+keymap.set("n", "<leader>tn", ":tabn<CR>") -- Go to next tab
+keymap.set("n", "<leader>tp", ":tabp<CR>") -- Go to previous tab
+
+-- Plugin keymaps
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+
+-- nvim-tree Toggle NvimTree
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")

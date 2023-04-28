@@ -15,7 +15,7 @@ local packer_bootstrap = ensure_packer()
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerCompile
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -29,6 +29,9 @@ return packer.startup(function(use)
 
    -- Packer can manage itself
    use 'wbthomason/packer.nvim'
+
+   -- Library of Lua modules many plugins use
+   use ("nvim-lua/plenary.nvim")
    
    -- Colorscheme setup
    use { "bluz71/vim-nightfly-colors", as = "nightfly" }
@@ -38,6 +41,31 @@ return packer.startup(function(use)
 
    -- Maximize and restore current window
    use ("szw/vim-maximizer")
+
+   -- Essentials
+   use ("tpope/vim-surround")
+
+   -- Comment with gcc and gc
+   use ("numToStr/Comment.nvim")
+
+   -- File explorer
+   use ("nvim-tree/nvim-tree.lua")
+
+   -- VSCode-like icons
+   use ("kyazdani42/nvim-web-devicons")
+
+   -- Statusline
+   use ("nvim-lualine/lualine.nvim")
+
+   -- Telescope (fuzzy finder)
+   use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.1',
+      requires = { {'nvim-lua/plenary.nvim'} }
+   }
+
+   -- Native telescope sorter that improves sorting performance
+   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+
 
    if packer_bootstrap then
       require("packer").sync()
