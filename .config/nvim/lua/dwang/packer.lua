@@ -58,14 +58,50 @@ return packer.startup(function(use)
    use ("nvim-lualine/lualine.nvim")
 
    -- Telescope (fuzzy finder)
-   use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.1',
-      requires = { {'nvim-lua/plenary.nvim'} }
-   }
+   use ({ 'nvim-telescope/telescope.nvim', branch = "0.1.x" })
 
    -- Native telescope sorter that improves sorting performance
-   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+   use ({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
+   -- Autocompletion
+   use ("hrsh7th/nvim-cmp")
+   use ("hrsh7th/cmp-buffer")
+   use ("hrsh7th/cmp-path")
+
+   -- Snippets
+   use ("L3MON4D3/LuaSnip")
+   use ("saadparwaiz1/cmp_luasnip")
+   use ("rafamadriz/friendly-snippets")
+
+   -- Manage + install LSP servers, linters, and formatters
+   use ("williamboman/mason.nvim")
+   use ("williamboman/mason-lspconfig.nvim")
+
+   -- Configure LSP server
+   use ("neovim/nvim-lspconfig")
+   use ("hrsh7th/cmp-nvim-lsp")
+   use ({ "glepnir/lspsaga.nvim", branch = "main" })
+   use ("jose-elias-alvarez/typescript.nvim")
+   use ("onsails/lspkind.nvim")
+
+   -- Formatting and linting
+   use ("jose-elias-alvarez/null-ls.nvim")
+   use ("jayp0521/mason-null-ls.nvim")
+
+   -- Treesitter
+   use ({
+      "nvim-treesitter/nvim-treesitter",
+      run = function()
+         require("nvim-treesitter.install").update({ with_sync = true })
+      end,
+   })
+
+   -- Auto closing
+   use ("windwp/nvim-autopairs")
+   use ("windwp/nvim-ts-autotag")
+
+   -- Git integration
+   use ("lewis6991/gitsigns.nvim")
 
    if packer_bootstrap then
       require("packer").sync()
